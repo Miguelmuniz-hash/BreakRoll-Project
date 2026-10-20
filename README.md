@@ -20,7 +20,7 @@ Plataforma web de streaming de animes e mangás desenvolvida como projeto acadê
 
 1. Clone o repositório no diretório do seu servidor local (exemplo: `htdocs` do XAMPP):
    ```bash
-   git clone https://github.com/Rafael010301/BreakRoll.git
+   git clone https://github.com/Miguelmuniz-hash/BreakRoll-Project.git
    ```
 
 2. Importe o banco de dados MySQL com o nome `break_db`.
