@@ -1,6 +1,7 @@
 <?php
-require_once 'conexao.php';
-include_once 'includes/header.php';
+require_once __DIR__ . '/conexao.php';
+require_once __DIR__ . '/config.php';
+include_once __DIR__ . '/includes/header.php';
 
 $mensagem = "";
 
@@ -28,15 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="alert-error" style="color: #fff; border-color: var(--primary-red);"><?= $mensagem ?></div>
         <?php endif; ?>
 
-        <form action="" method="POST">
+        <form action="<?= site_url('esqueci-senha.php') ?>" method="POST">
             <div class="form-group">
                 <label for="email">Digite seu E-mail cadastrado:</label>
                 <input type="email" id="email" name="email_user" required placeholder="seu@email.com">
             </div>
             <button type="submit" class="btn-submit">Enviar Link de Recuperação</button>
         </form>
-        <p class="form-footer-text"><a href="login.php">Voltar para o Login</a></p>
+        <p class="form-footer-text"><a href="<?= site_url('login.php') ?>">Voltar para o Login</a></p>
     </div>
 </div>
 
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once __DIR__ . '/includes/footer.php'; ?>
