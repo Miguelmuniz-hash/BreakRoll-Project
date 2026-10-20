@@ -28,7 +28,7 @@ body {
 header {
     background: linear-gradient(180deg, #000000 0%, var(--card-bg) 100%);
     border-bottom: 2px solid var(--primary-red);
-    padding: 20px 40px;
+    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,6 +42,24 @@ header {
 
 .logo-area h1 span {
     color: var(--primary-red);
+}
+
+/* Estilização da Logo em Imagem no Header */
+.logo-area a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.site-logo {
+    max-height: 70px; /* Ajusta a altura ideal para encaixar na navbar */
+    width: auto;      /* Mantém a proporção original da imagem */
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+}
+
+.site-logo:hover {
+    opacity: 0.85; /* Pequeno efeito ao passar o mouse */
 }
 
 nav ul {
@@ -459,4 +477,24 @@ footer {
     margin-bottom: 15px;
     font-size: 0.9rem;
     text-align: center;
+}
+
+/* Botão de Remover dos Favoritos */
+.btn-remove {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: transparent;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-remove:hover {
+    background-color: #dc2626;
+    color: #ffffff;
 }

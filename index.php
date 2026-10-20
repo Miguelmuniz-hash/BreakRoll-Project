@@ -33,9 +33,9 @@ $conteudos = $stmt_cont->fetchAll(PDO::FETCH_ASSOC);
     <!-- Navegação por Categorias -->
     <h2 class="section-title">Categorias</h2>
     <div class="categories-nav">
-        <a href="<?= site_url('index.php') ?>" class="cat-badge <?= $categoria_id == 0 ? 'active' : '' ?>">Todas</a>
+        <a href="index.php" class="cat-badge <?= $categoria_id == 0 ? 'active' : '' ?>">Todas</a>
         <?php foreach ($categorias as $cat): ?>
-            <a href="<?= site_url('index.php?cat=' . $cat['id_categoria']) ?>" class="cat-badge <?= $categoria_id == $cat['id_categoria'] ? 'active' : '' ?>">
+            <a href="index.php?cat=<?= $cat['id_categoria'] ?>" class="cat-badge <?= $categoria_id == $cat['id_categoria'] ? 'active' : '' ?>">
                 <?= htmlspecialchars($cat['nome_categorias']) ?>
             </a>
         <?php endforeach; ?>
@@ -52,7 +52,7 @@ $conteudos = $stmt_cont->fetchAll(PDO::FETCH_ASSOC);
                         <span class="content-category"><?= htmlspecialchars($item['nome_categorias'] ?? 'Geral') ?></span>
                         <h3 class="content-title"><?= htmlspecialchars($item['titulo_conteudo']) ?></h3>
                         <p class="content-desc"><?= htmlspecialchars(substr($item['descricao_conteudo'], 0, 80)) ?>...</p>
-                        <a href="<?= site_url('detalhe.php?id=' . $item['id_conteudo']) ?>" class="btn-details">Ver Detalhes</a>
+                        <a href="detalhe.php?id=<?= $item['id_conteudo'] ?>" class="btn-details">Ver Detalhes</a>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -63,5 +63,5 @@ $conteudos = $stmt_cont->fetchAll(PDO::FETCH_ASSOC);
 
 </div>
 
-<script src="<?= asset_url('js/busca.js') ?>"></script>
-<?php include_once __DIR__ . '/includes/footer.php'; ?>
+<script src="js/busca.js"></script>
+<?php include_once 'includes/footer.php'; ?>

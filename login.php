@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['usuario_id'] = $usuario['id_user'];
                 $_SESSION['usuario_nome'] = $usuario['nome_user'];
 
-                header("Location: " . site_url('index.php'));
+                header("Location: index.php");
                 exit;
             } else {
                 $erro = "E-mail ou senha inválidos.";
@@ -54,7 +54,7 @@ include __DIR__ . '/includes/header.php';
             <p class="success-msg"><?= htmlspecialchars($sucesso) ?></p>
         <?php endif; ?>
 
-        <form action="<?= site_url('login.php') ?>" method="POST">
+        <form action="login.php" method="POST">
             <label>E-mail:</label>
             <input type="email" name="email" placeholder="seu@email.com" required>
             
@@ -64,8 +64,8 @@ include __DIR__ . '/includes/header.php';
             <button type="submit" class="btn-submit">Entrar</button>
         </form>
         
-        <p class="auth-links">Não tem uma conta? <a href="<?= site_url('cadastro.php') ?>">Cadastre-se</a></p>
-        <p class="auth-links"><a href="<?= site_url('esqueci-senha.php') ?>">Esqueceu a senha?</a></p>
+        <p class="auth-links">Não tem uma conta? <a href="cadastro.php">Cadastre-se</a></p>
+        <p class="auth-links"><a href="esqueci-senha.php">Esqueceu a senha?</a></p>
     </div>
 </main>
 

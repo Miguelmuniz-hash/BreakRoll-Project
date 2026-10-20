@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             curl_exec($ch);
             curl_close($ch);
 
-            header('Location: ' . site_url('index.php'));
+            header('Location: index.php');
             exit;
 
         } catch (PDOException $e) {
@@ -82,7 +82,7 @@ include __DIR__ . '/includes/header.php';
             <p class="error-msg"><?= htmlspecialchars($mensagemErro) ?></p>
         <?php endif; ?>
 
-        <form action="<?= site_url('cadastro.php') ?>" method="POST">
+        <form action="cadastro.php" method="POST">
             <label>Nome completo:</label>
             <input type="text" name="nome" value="<?= htmlspecialchars($_POST['nome'] ?? '') ?>" placeholder="Digite seu nome" required>
 
@@ -95,7 +95,7 @@ include __DIR__ . '/includes/header.php';
             <button type="submit" class="btn-submit">Cadastrar e Entrar</button>
         </form>
 
-        <p class="auth-links">Já possui uma conta? <a href="<?= site_url('login.php') ?>">Faça Login</a></p>
+        <p class="auth-links">Já possui uma conta? <a href="login.php">Faça Login</a></p>
     </div>
 </main>
 
