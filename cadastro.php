@@ -33,9 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $_SESSION['id_user'] = $usuarioId;
             $_SESSION['nome_user'] = $nome;
-            $_SESSION['usuario_id'] = $usuarioId;
-            $_SESSION['usuario_nome'] = $nome;
-
+            
             $dadosEmail = [
                 'from'    => 'onboarding@resend.dev',
                 'to'      => [DONO_EMAIL],
